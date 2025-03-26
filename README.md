@@ -1,4 +1,4 @@
-<h1>SZ_solutions Landing page</h1>
+<h1>SZ_solutions landing page</h1>
 
 
 ## Tools
@@ -11,7 +11,7 @@
 Inside of your Astro project, you'll see the following folders and files:
 
 ```
-/
+sz_solutions_web/
 ├── public/
 │   ├── images/
 │   ├── logos/*
