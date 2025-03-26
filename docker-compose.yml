@@ -1,0 +1,7 @@
+services:
+  web:
+    build: ./sz_solutions_web
+    restart: always
+    ports:
+    - 8443:443
+    - 8080:80
