@@ -5,14 +5,13 @@ import Paragraph from "../shared/Paragraph.astro";
 import Title from "../shared/Title.astro";
 import { services } from "../../utils/data.ts";
 
-
 type ServicesProps = {
     title: string;
     description: string;
     icon: string;
-    image: string
+    image: string;
+    path: string;
 };
-
 
 ---
 
@@ -23,14 +22,19 @@ type ServicesProps = {
                 Lo que hacemos
             </Title>
             <Paragraph>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Te ofrecemos los siguientes servicios. Y si necesitas algo más, lo hacemos para tí.
             </Paragraph>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {
                     services.map((service: ServicesProps) => {
                     return (
-                            <Service title={service.title} description={service.description} icon={service.icon} image={service.image}>
+                            <Service
+                                title={service.title}
+                                description={service.description}
+                                icon={service.icon}
+                                image={service.image}
+                                path={service.path}>
                             </Service>
                             );
                     })
