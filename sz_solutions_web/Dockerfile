@@ -6,8 +6,8 @@ RUN npm run build
 
 FROM httpd:alpine AS runtime
 COPY --from=build ./dist /usr/local/apache2/htdocs/
-COPY ./ssl/fullchain.* /usr/local/apache2/conf/server.crt
-COPY ./ssl/privkey.* /usr/local/apache2/conf/server.key
+COPY ./ssl/fullchain.pem /usr/local/apache2/conf/server.crt
+COPY ./ssl/privkey.pem /usr/local/apache2/conf/server.key
 COPY ./ssl/my-httpd-vhosts.conf /usr/local/apache2/conf/extra/httpd-vhosts.conf
 RUN sed -i \
 		-e 's/^#\(Include .*httpd-vhosts.conf\)/\1/' \
